@@ -53,18 +53,18 @@ public class InstallFromPlaystore {
 
         long startTime = System.currentTimeMillis();
         Thread.sleep(3000);
-// To click on the search box
+        // To click on the search box
         try {
             dr.findElementById("com.android.vending:id/search_box_idle_text").click();
-//enter the text in the search box
+        //enter the text in the search box
             dr.findElementById("com.android.vending:id/search_box_text_input").sendKeys("flappy bird");
             Thread.sleep(3000);
-//select the first text in the list
+        //select the first text in the list
             dr.findElementById("com.android.vending:id/suggest_text").click();
             dr.findElementByName("Floppy Bird").click();
-//Click on install button
+        //Click on install button
             dr.findElementById("com.android.vending:id/buy_button").click();
-//Click on Accept Button
+        //Click on Accept Button
             dr.findElementById("com.android.vending:id/continue_button").click();
             WebDriverWait wait = new WebDriverWait(dr, 180);
             wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.android.vending:id/launch_button")));
@@ -91,11 +91,11 @@ public class InstallFromPlaystore {
             //enter the text in the search box
             dr.findElementById("com.android.vending:id/search_box_text_input").sendKeys("linkdin");
             Thread.sleep(3000);
-//select the first text in the list
+        //select the first text in the list
             dr.findElementById("com.android.vending:id/suggest_text").click();
-//Click on install button
+        //Click on install button
             dr.findElementById("com.android.vending:id/buy_button").click();
-//Click on Accept Button
+        //Click on Accept Button
             Boolean contin = dr.findElementsById("com.android.vending:id/continue_button").size() > 0;
             if (contin)
                 dr.findElementById("com.android.vending:id/continue_button").click();
@@ -111,13 +111,13 @@ public class InstallFromPlaystore {
             //enter the text in the search box
             dr.findElementById("com.android.vending:id/search_box_text_input").sendKeys("lift");
             Thread.sleep(3000);
-//select the first text in the list
+        //select the first text in the list
             dr.findElementById("com.android.vending:id/suggest_text").click();
             dr.findElementByName("Lift Simulator").click();
-//Click on install button
+        //Click on install button
             Thread.sleep(2000);
             dr.findElementById("com.android.vending:id/buy_button").click();
-//Click on Accept Button
+        //Click on Accept Button
             Boolean contin = dr.findElementsById("com.android.vending:id/continue_button").size() > 0;
             if (contin)
                 dr.findElementById("com.android.vending:id/continue_button").click();
@@ -141,7 +141,6 @@ public class InstallFromPlaystore {
             Thread.sleep(2000);
             dr.findElementById("com.android.vending:id/buy_button").click();
             // Granting Permission for M device(Click on Continue Option)
-            // dr.findElementById("com.android.vending:id/positive_button").click();
             //Click on Accept Button
             Boolean contin = dr.findElementsById("com.android.vending:id/continue_button").size() > 0;
             if (contin)
@@ -161,7 +160,6 @@ public class InstallFromPlaystore {
         try {
 
             String str = dr.findElementById("launcher3.android.com.hivelauncher:id/page_indicator").getAttribute("name");
-            // System.out.println(str);
             String result = str.substring(16, str.length() - 10);
             int number = Integer.parseInt(result.trim());
             for (int j = 1; j <= number; j++) {
@@ -171,7 +169,6 @@ public class InstallFromPlaystore {
                 @SuppressWarnings("unchecked")
                 List<WebElement> appsCount = dr.findElementsByXPath("//android.widget.TextView");
                 int ac = appsCount.size();
-                //  System.out.println(ac);
                 for (int i = 0; i < ac; i++) {
                     String s = appsCount.get(i).getText();
                     // System.out.println(s);
@@ -191,10 +188,6 @@ public class InstallFromPlaystore {
                         // System.out.println(" ");
                     }
                 }
-
-
-                //	 WebDriverWait wait = new WebDriverWait(dr,60);
-                //    wait.until(ExpectedConditions.visibilityOf(dr.findElementByName("Firefox")));
 
             }
             if (count == 4) {
