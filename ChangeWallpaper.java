@@ -33,7 +33,7 @@ public class ChangeWallpaper extends Excel {
 
         WebElement fn = dr.findElementById("launcher3.android.com.hivelauncher:id/workspace");
         try {
-            // TO apply system wallpaper 1
+            // TO apply system wallpaper no. 1
 
             new TouchAction((MobileDriver) dr).longPress(fn).perform();
             dr.findElementById("launcher3.android.com.hivelauncher:id/wallpaper_button").click();
