@@ -17,8 +17,6 @@ public class Excel {
 
 
 	public void main(String[] args) throws EncryptedDocumentException, InvalidFormatException, IOException {
-		// TODO Auto-generated method stub
-  //      Excel e=new Excel();
 		FileInputStream fis = new FileInputStream("C://Users/Dinesh B M/Desktop/AutomationTestReportForLauncher.xlsx");
 		Workbook wb=WorkbookFactory.create(fis);
 		Sheet s=wb.getSheet("Sheet1");
